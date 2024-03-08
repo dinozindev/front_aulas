@@ -1,0 +1,23 @@
+body {
+    background-color: bisque;
+}
+
+#pagina-1 {
+    background-color: grey;
+}
+
+.lista__disc {
+    list-style: disc;
+}
+
+.lista__circle {
+    list-style: circle;
+}
+
+.lista__square {
+    list-style: square;
+}
+
+.lista__none {
+    list-style: none;
+}
