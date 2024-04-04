@@ -1,0 +1,30 @@
+#tabuleiro {
+    width: 2400px;
+    height: 2400px;
+    margin: 0 auto;
+    border: 1px black solid;
+}
+
+.celula {
+    width: 300px;
+    height: 300px;
+    float: right;
+}
+
+.dama {
+    width: 200px;
+    margin: 50px;
+}
+
+.branca {
+    background-color: white;
+}
+
+.preta {
+    background-color: black;
+}
+
+h2 {
+    font-size: 5rem;
+    text-align:center;
+}
