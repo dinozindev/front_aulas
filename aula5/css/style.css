@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: lightgray;
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    padding: 0.5rem 2rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__list {
+    display:flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar__list-item-link {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar__list-item-link:hover {
+    color: lightblue;
+    transition: 0.5s;   
+}
+
+
+.title {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.ordered__list-greek {
+    list-style-type: lower-greek;
+}
+
+.ordered__list-katakana {
+    list-style-type: katakana;
+}
+
+
+.ordered__list, .ordered__list-greek, .ordered__list-katakana {
+    display:flex;
+    flex-direction: column;
+}
+
+.list__item {
+    margin: 0.5rem;
+    background-color: lightgray;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.list__item:hover {
+    background-color: lightblue;
+    transition: 0.5s;
+    cursor:default;
+}
