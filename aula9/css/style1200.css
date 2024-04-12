@@ -1,0 +1,12 @@
+
+@media (min-width:993px) and (max-width: 1200px) {
+    body {
+        background-color: yellowgreen;
+    }
+}
+
+@media (min-width:1201px) {
+    body {
+        background-color: rebeccapurple;
+    }
+}
