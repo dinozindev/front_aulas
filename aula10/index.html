@@ -23,11 +23,14 @@
             // soma = num01 + num02;
             // alert(soma)
 
+            
+
             function Somar() {
                 var num01 = document.fmrCalc.valor01;
                 var num02 = document.fmrCalc.valor02;
                 var result = document.getElementById("resultado");
-                var erro1 = document.getElementById("erro01")
+                var erro1 = document.getElementById("erro01");
+                var erro2 = document.getElementById("erro02");
                 if (num01.value == "") {
                     num01.focus()
                     erro01.innerText = 'Campo obrigatório'
@@ -50,7 +53,8 @@
                 var num01 = document.fmrCalc.valor01;
                 var num02 = document.fmrCalc.valor02;
                 var result = document.getElementById("resultado");
-                var erro1 = document.getElementById("erro01")
+                var erro1 = document.getElementById("erro01");
+                var erro2 = document.getElementById("erro02");
                 if (num01.value == "") {
                     num01.focus()
                     erro01.innerText = 'Campo obrigatório'
@@ -63,10 +67,56 @@
                     num02.focus()
                     erro02.innerText = 'Campo obrigatório'
                 } else {
-                    subtracao = parseInt(num02.value) - parseInt(num02.value);
+                    subtracao = parseInt(num01.value) - parseInt(num02.value);
                     result.innerText=subtracao
                     erro02.innerText=''
                 }  
+            }
+
+            function Multiplicar() {
+                var num01 = document.fmrCalc.valor01;
+                var num02 = document.fmrCalc.valor02;
+                var result = document.getElementById("resultado");
+                var erro1 = document.getElementById("erro01");
+                var erro2 = document.getElementById("erro02");
+                if (num01.value == "") {
+                    num01.focus()
+                    erro01.innerText = 'Campo obrigatório'
+                } else {
+                    multiplicacao = parseInt(num01.value) * parseInt(num02.value);
+                    result.innerText=multiplicacao
+                    erro01.innerText=''
+                }
+                if (num02.value == "") {
+                    num02.focus()
+                    erro02.innerText = 'Campo obrigatório'
+                } else {
+                    multiplicacao = parseInt(num01.value) * parseInt(num02.value);
+                    result.innerText=multiplicacao
+                    erro02.innerText=''
+                }  
+            }
+
+            function Dividir() {
+                var num01 = document.fmrCalc.valor01;
+                var num02 = document.fmrCalc.valor02;
+                var result = document.getElementById("resultado");
+                var erro1 = document.getElementById("erro01");
+                var erro2 = document.getElementById("erro02");
+                if (num01.value == "") {
+                    num01.focus()
+                    erro01.innerText = 'Campo obrigatório'
+                } else if (num02.value == "") {
+                    num02.focus()
+                    erro02.innerText = 'Campo obrigatório'
+                } else if (num02.value == 0) {
+                    num02.focus()
+                    erro02.innerText = 'Não é possível dividir por 0'
+                } else {
+                    divisao = parseInt(num01.value) / parseInt(num02.value);
+                    result.innerText=divisao
+                    erro02.innerText=''
+                }
             }
 
         </script>
@@ -77,8 +127,8 @@
             <br>
             <input type="button" value="Somar" onClick=Somar()>
             <input type="button" value="Subtrair" onClick=Subtrair()>
-            <input type="button" value="Multiplicar" onClick=Somar()>
-            <input type="button" value="Dividir" onClick=Somar()>
+            <input type="button" value="Multiplicar" onClick=Multiplicar()>
+            <input type="button" value="Dividir" onClick=Dividir()>
             <p>Resultado: <span id="resultado"></span></p>
         </form>
     </div>
