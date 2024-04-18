@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <button class="btn__bg">Change Background</button>
+        <script>
+            // const msg = "Hello, World!";
+            // let msg1 = "Isso é FIAP!!";
+            // var msg2 = "Olá, Mundo!";
+            // document.write(`msg ${msg} MSG1 ${msg1} MSG2 ${msg2}`)
+            // alert(msg + msg2)
+
+            // var num01 = 10;
+            // var num02 = 20;
+            // var soma = 0;
+
+            // soma = num01 + num02;
+            // alert(soma)
+
+            function Somar() {
+                var num01 = document.fmrCalc.valor01;
+                var num02 = document.fmrCalc.valor02;
+                var result = document.getElementById("resultado");
+                var erro1 = document.getElementById("erro01")
+                if (num01.value == "") {
+                    num01.focus()
+                    erro01.innerText = 'Campo obrigatório'
+                } else {
+                    soma = parseInt(num01.value) + parseInt(num02.value);
+                    result.innerText=soma
+                    erro01.innerText=''
+                }
+                if (num02.value == "") {
+                    num02.focus()
+                    erro02.innerText = 'Campo obrigatório'
+                } else {
+                    soma = parseInt(num02.value) + parseInt(num02.value);
+                    result.innerText=soma
+                    erro02.innerText=''
+                }
+            }
+
+            function Subtrair() {
+                var num01 = document.fmrCalc.valor01;
+                var num02 = document.fmrCalc.valor02;
+                var result = document.getElementById("resultado");
+                var erro1 = document.getElementById("erro01")
+                if (num01.value == "") {
+                    num01.focus()
+                    erro01.innerText = 'Campo obrigatório'
+                } else {
+                    subtracao = parseInt(num01.value) - parseInt(num02.value);
+                    result.innerText=subtracao
+                    erro01.innerText=''
+                }
+                if (num02.value == "") {
+                    num02.focus()
+                    erro02.innerText = 'Campo obrigatório'
+                } else {
+                    subtracao = parseInt(num02.value) - parseInt(num02.value);
+                    result.innerText=subtracao
+                    erro02.innerText=''
+                }  
+            }
+
+        </script>
+        <form name="fmrCalc">
+            <label>Valor 01: <input type="number" name="valor01"><span id="erro01"></span></label>
+            <br>
+            <label>Valor 02: <input type="number" name="valor02"><span id="erro02"></span></label>
+            <br>
+            <input type="button" value="Somar" onClick=Somar()>
+            <input type="button" value="Subtrair" onClick=Subtrair()>
+            <input type="button" value="Multiplicar" onClick=Somar()>
+            <input type="button" value="Dividir" onClick=Somar()>
+            <p>Resultado: <span id="resultado"></span></p>
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

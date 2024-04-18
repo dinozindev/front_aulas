@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg__cyan{
+    background-color: cyan;
+}
+
+.bg__green {
+    background-color: lightgreen;
+}
