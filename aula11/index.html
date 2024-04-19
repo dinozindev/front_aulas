@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form name="frmCadastro" id="frmCadastro">
+        <label for="txtNome">Nome: </label>
+            <input type="text" name="txtNome" id="txtNome">
+            <span class="erro" id="erroNome"></span>
+        <br>
+        <label for="txtCPF">CPF: </label>
+        <input type="text" id="txtCPF" name="txtCPF" onkeydown="Mascara(this, 'cpf')" maxlength="14"> <!-- this faz referencia ao campo CPF, e o 'cpf' eh a mascara, para que a função faça a validação para a formatação de cpf -->
+        <span class="erro" id="erroCPF"></span>
+        <br>
+        <label for="txtTel">Telefone: </label>
+        <input type="text" id="txtTel" name="txtTel" onkeydown="Mascara(this, 'tel')" maxlength="15"> <!-- this faz referencia ao campo Tel, e o 'tel' eh a mascara, para que a função faça a validação para a formatação de tel -->
+        <br>
+        <label for="txtCEP">CEP: </label>
+        <input type="text" id="txtCEP" name="txtCEP" onkeydown="Mascara(this, 'cep')" maxlength="9"> <!-- this faz referencia ao campo CEP, e o 'cep' eh a mascara, para que a função faça a validação para a formatação de cep -->
+        <br>
+        <input type="submit" value="Cadastrar" id="btn_submit" onClick="return Validar()">
+    </form>
+</body>
+
+</html>
