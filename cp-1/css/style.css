@@ -1,19 +1,19 @@
 #tabuleiro {
-    width: 2400px;
-    height: 2400px;
+    width: 800px;
+    height: 800px;
     margin: 0 auto;
     border: 1px black solid;
 }
 
 .celula {
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     float: right;
 }
 
 .dama {
-    width: 200px;
-    margin: 50px;
+    width: 50px;
+    margin: 25px;
 }
 
 .branca {
@@ -25,6 +25,6 @@
 }
 
 h2 {
-    font-size: 5rem;
+    font-size: 2rem;
     text-align:center;
 }
