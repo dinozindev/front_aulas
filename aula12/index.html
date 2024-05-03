@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="pagina2.html">Pagina2</a>
+    <script>
+        const d = new Date();
+        document.write(d.toLocaleDateString());
+        const dia = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
+        const mes = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"];
+        document.write(dia[d.getDay()]);
+        document.write(mes[d.getMonth()]);
+        document.write(d.getDay())
+        document.write(d.getMonth())
+    </script>
+</body>
+</html>

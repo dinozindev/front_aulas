@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="pagina4.html">Pagina 4</a>
+    <p id="hora"></p>
+    <button type="button" onclick="pararTempo()">Parar relogio</button>
+    <script>
+        function horario() {
+            const hora = new Date();
+            document.getElementById("hora").innerText = hora.toLocaleTimeString()
+        }
+        const tempo = setInterval(horario, 1000)
+
+        function pararTempo() {
+            clearInterval(tempo);
+        }
+    </script>
+</body>
+</html>
