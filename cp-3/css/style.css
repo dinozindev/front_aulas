@@ -1,0 +1,15 @@
+* {
+    margin:0;
+}
+
+#rodape {
+    margin-top: 417px;
+    text-align:center;
+    width:100%;
+    background-color:grey;
+
+}
+
+#rodape p {
+    margin: 0 auto;
+}
