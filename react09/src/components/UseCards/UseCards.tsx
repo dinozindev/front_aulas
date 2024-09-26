@@ -1,4 +1,3 @@
-
 interface UseCardProps {
     nome: string;
     idade: number;
