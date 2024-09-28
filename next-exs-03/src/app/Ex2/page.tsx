@@ -1,8 +1,8 @@
 'use client'
+
 const ex2 = () => {
   return (
     <>
-        
     </>
   )
 }
