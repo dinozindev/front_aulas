@@ -27,9 +27,6 @@ const PageLogin = () => {
             setError("Página restrita.")
         }
     }, [])
-    
-      
-    
 
     return (
         <>
