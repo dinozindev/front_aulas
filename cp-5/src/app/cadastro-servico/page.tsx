@@ -8,17 +8,20 @@ import * as yup from 'yup';
 const schema = yup.object().shape({
     nome: yup.string().required('Nome do serviço é obrigatório'),
     data: yup.date().min(new Date(), 'A data não pode ser anterior ao dia atual').required('A data do serviço é obrigatória'),
-    tipo_pet: yup.string().required('O tipo do pet é obrigatório'),
-    nome_pet: yup.string().required('O nome do pet é obrigatório'),
-    proprietario_pet: yup.string().required('O nome do proprietário é obrigatório'),
-    proprietario_tel: yup.string().length(11, 'Telefone deve ter 11 dígitos.').required('O nome do proprietário é obrigatório')
+    observacao: yup.string().required('Observação é obrigatória.')
 })
 
 const CadastroServicoPage = () => {
     const [listaServicos, setListaServicos] = useState<any[]>([]);
-
+    
+    const router = useRouter();
 
     useEffect(() => {
+        const logado = localStorage.getItem('logado');
+        if (!logado || logado === 'false') {
+            localStorage.setItem('erro', '1');
+            router.push('/acesso-negado'); // Redireciona para a página inicial
+        }
         const fetchServicos = async () => {
             try {
                 const res = await fetch('/api/servicos.json'); 
@@ -44,7 +47,7 @@ const CadastroServicoPage = () => {
     <>
     <h1 className="page__title">Cadastrar Serviço</h1>
     <form onSubmit={handleSubmit(inserirServico)}>
-        <label>Nome do Serviço
+        <label>Tipo do Serviço
             <select {...register('nome')}>
             <option value="" disabled selected>Selecione o tipo de Serviço...</option>
             <option value="Banho">Banho</option>
@@ -64,31 +67,9 @@ const CadastroServicoPage = () => {
             <span className="input__error">{errors.data?.message}</span>
         </label>
         <br />
-        <label>Tipo do Pet
-            <select {...register('tipo_pet')}>
-            <option value="" disabled selected>Selecione o tipo de Pet...</option>
-            <option value="Cachorro">Cachorro</option>
-            <option value="Gato">Gato</option>
-            <option value="Pássaro">Pássaro</option>
-            <option value="Peixe">Peixe</option>
-            <option value="Roedor">Roedor</option>
-            </select>
-            <span className="input__error">{errors.tipo_pet?.message}</span>
-        </label>
-        <br />
-        <label>Nome do Pet
-            <input type="text" {...register('nome_pet')} />
-            <span className="input__error">{errors.nome_pet?.message}</span>
-        </label>
-        <br />
-        <label>Nome do Proprietário
-            <input type="text" {...register('proprietario_pet')} />
-            <span className="input__error">{errors.proprietario_pet?.message}</span>
-        </label>
-        <br />
-        <label>Telefone do Proprietário
-            <input type="text" {...register('proprietario_tel')} />
-            <span className="input__error">{errors.proprietario_tel?.message}</span>
+        <label>Data do Serviço
+            <input type="text" {...register('observacao')}/>
+            <span className="input__error">{errors.observacao?.message}</span>
         </label>
         <br />
         <input type="submit" className="input__submit" />

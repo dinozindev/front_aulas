@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <> 
-    <main>
+    <main className="main__page">
       <div>
         <h1>Tudo que seu Pet precisa!</h1>
         <p>Tosas, Banhos, Estádias e muito mais!</p>
