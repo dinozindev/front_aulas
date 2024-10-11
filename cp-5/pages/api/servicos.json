@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "nome": "Banho",
+        "descricao": "Banho de Cachorro",
+        "preco": 70,
+        "tipo_pet": "Cachorro",
+        "nome_pet": "Bolt",
+        "proprietario_pet": "Mateus",
+        "proprietario_tel": "11938928374"
+    }
+]

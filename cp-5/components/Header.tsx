@@ -6,16 +6,16 @@ const Header = () => {
   return (
     <>
     <header>
-        <div className="logo__div">
+        <Link href="/"><div className="logo__div">
             <Image src="/img/logo.png" alt='logo' width={50} height={50}/>
             <h1>PetShow</h1>
-        </div>
+        </div></Link>
         <ul className="header__ul">
             <li>
-            <Link href="/ServicosPage">Lista de Serviços</Link>  
+            <Link href="/lista-servicos">Lista de Serviços</Link>  
             </li>
             <li>
-            <Link href="/CadastroServicoPage">Cadastro de Serviços</Link>
+            <Link href="/cadastro-servico">Cadastro de Serviços</Link>
             </li>
             <li>
             <Link href="/">Detalhes do Pet</Link>  
