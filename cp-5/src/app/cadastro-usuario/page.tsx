@@ -17,11 +17,18 @@ const schema = yup.object().shape({
 
 const CadastroUsuarioPage = () => {
 
+    const [usuario, setUsuario] = useState();
+
     const {register, handleSubmit, formState : {errors}} = useForm({resolver: yupResolver(schema)})
+
+    const inserirUsuario = (usuario : any) => {
+        setUsuario(usuario)
+
+    }
     return (
         <>
         <h1 className="page__title">Cadastrar-se</h1>
-        <form>
+        <form onSubmit={handleSubmit(inserirUsuario)}>
         <label>Nome do Usuário
             <input type="text" {...register('nome')} />
             <span className="input__error">{errors.nome?.message}</span>
