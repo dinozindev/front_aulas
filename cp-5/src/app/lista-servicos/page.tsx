@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
+import CardServico from "../../../components/CardServico";
 
 const ServicosPage = () => {
   const [listaServicos, setListaServicos] = useState<any[]>([]);
@@ -21,17 +22,12 @@ const ServicosPage = () => {
 
   return (
     <>
+    <h1 className="page__title">Lista de Serviços</h1>
+    <div className="servicos__div">
      {listaServicos.map(servico => (
-      <div>
-        <h1>Serviço: {servico.nome}</h1>
-        <p>Descrição: {servico.descricao}</p>
-        <p>Preço: R${servico.preco}</p>
-        <p>Tipo de Pet: {servico.tipo_pet}</p>
-        <p>Nome do Pet: {servico.nome_pet}</p>
-        <p>Nome do Proprietário: {servico.proprietario_pet}</p>
-        <p>Telefone do Proprietário: {servico.proprietario_tel}</p>
-      </div>
+        <CardServico key={servico.id} nome={servico.nome} descricao={servico.descricao} preco={servico.preco} imagem={servico.imagem}/>
     ))}
+    </div>
     </>
   )
 }

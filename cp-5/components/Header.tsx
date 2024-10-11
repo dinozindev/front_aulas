@@ -15,10 +15,13 @@ const Header = () => {
             <Link href="/lista-servicos">Lista de Serviços</Link>  
             </li>
             <li>
-            <Link href="/cadastro-servico">Cadastro de Serviços</Link>
+            <Link href="/cadastro-servico">Agendar um Serviço</Link>
             </li>
             <li>
             <Link href="/">Detalhes do Pet</Link>  
+            </li>
+            <li>
+            <Link href="/cadastro-usuario">Cadastrar-se</Link>
             </li>
         </ul>
     </header>

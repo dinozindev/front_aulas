@@ -1,13 +1,13 @@
 'use client'
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
     nome: yup.string().required('Nome do serviço é obrigatório'),
-    descricao: yup.string().required('Descrição do serviço é obrigatória.'),
-    preco: yup.number().required('Preço do serviço é obrigatório.'),
+    data: yup.date().min(new Date(), 'A data não pode ser anterior ao dia atual').required('A data do serviço é obrigatória'),
     tipo_pet: yup.string().required('O tipo do pet é obrigatório'),
     nome_pet: yup.string().required('O nome do pet é obrigatório'),
     proprietario_pet: yup.string().required('O nome do proprietário é obrigatório'),
@@ -16,6 +16,7 @@ const schema = yup.object().shape({
 
 const CadastroServicoPage = () => {
     const [listaServicos, setListaServicos] = useState<any[]>([]);
+
 
     useEffect(() => {
         const fetchServicos = async () => {
@@ -41,27 +42,26 @@ const CadastroServicoPage = () => {
     }
   return (
     <>
-    <h1 className="cadastro__servico--title">Cadastrar Serviço</h1>
+    <h1 className="page__title">Cadastrar Serviço</h1>
     <form onSubmit={handleSubmit(inserirServico)}>
         <label>Nome do Serviço
             <select {...register('nome')}>
             <option value="" disabled selected>Selecione o tipo de Serviço...</option>
             <option value="Banho">Banho</option>
-            <option value="Tosa">Tosa</option>
+            <option value="Tosa Completa">Tosa Completa</option>
+            <option value="Tosa Higiênica">Tosa Higiênica</option>
             <option value="Consulta Veterinária">Consulta Veterinária</option>
             <option value="Hotel Pet">Hotel Pet</option>
+            <option value="Daycare (Creche)">Daycare (Creche)</option>
+            <option value="Adestramento">Adestramento</option>
+            <option value="Transporte do Pet">Transporte do Pet</option>
             </select>
             <span className="input__error">{errors.nome?.message}</span>
         </label>
-        <br />
-        <label>Descrição do Serviço
-            <input type="text" {...register('descricao')} />
-            <span className="input__error">{errors.descricao?.message}</span>
-        </label>
-        <br />
-        <label>Preço do Serviço
-            <input type="number" step=".01" {...register('preco')} />
-            <span className="input__error">{errors.preco?.message}</span>
+        <br/>
+        <label>Data do Serviço
+            <input type="date" {...register('data')}/>
+            <span className="input__error">{errors.data?.message}</span>
         </label>
         <br />
         <label>Tipo do Pet

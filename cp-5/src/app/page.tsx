@@ -1,20 +1,21 @@
 'use client'
 
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-
-const Main = styled.main`
-  width: 100%;
-  height: 100%;
-`
+import cachorro from "../../public/img/cachorro-main.png"
+import Image from "next/image";
+import Link from "next/link";
 
 
 export default function Home() {
   return (
     <> 
-    <Main>
- 
-    </Main>
+    <main>
+      <div>
+        <h1>Tudo que seu Pet precisa!</h1>
+        <p>Tosas, Banhos, Estádias e muito mais!</p>
+        <Link className="home__link" href='/lista-servicos'>Serviços</Link>
+      </div>
+      <Image src={cachorro} alt="cachorro" width={500} height={700}/>
+    </main>
     </>
   );
 }
