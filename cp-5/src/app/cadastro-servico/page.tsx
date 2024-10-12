@@ -19,8 +19,7 @@ const CadastroServicoPage = () => {
     useEffect(() => {
         const logado = localStorage.getItem('logado');
         if (!logado || logado === 'false') {
-            localStorage.setItem('erro', '1');
-            router.push('/acesso-negado'); // Redireciona para a página inicial
+            router.push('/acesso-negado'); 
         }
         const fetchServicos = async () => {
             try {

@@ -16,6 +16,13 @@ const schema = yup.object().shape({
 })
 
 const CadastroUsuarioPage = () => {
+    const [nome, setNome] = useState('');
+    const [senha, setSenha] = useState('');
+    const [proprietarioTel, setProprietarioTel] = useState('');
+    const [tipoPet, setTipoPet] = useState('');
+    const [nomePet, setNomePet] = useState('');
+    const [racaPet, setRacaPet] = useState('');
+    const [idadePet, setIdadePet] = useState('');
 
     const [usuario, setUsuario] = useState();
 
@@ -23,19 +30,21 @@ const CadastroUsuarioPage = () => {
 
     const inserirUsuario = (usuario : any) => {
         setUsuario(usuario)
-
+        localStorage.setItem("usuario", JSON.stringify(usuario))
+        localStorage.setItem("logado", 'true')
     }
+
     return (
         <>
         <h1 className="page__title">Cadastrar-se</h1>
         <form onSubmit={handleSubmit(inserirUsuario)}>
         <label>Nome do Usuário
-            <input type="text" {...register('nome')} />
+            <input type="text" {...register('nome') } onChange={(e) => setNome(e.target.value)}/>
             <span className="input__error">{errors.nome?.message}</span>
         </label>
         <br />
         <label>Senha
-            <input type="text" {...register('senha')} />
+            <input type="password" {...register('senha')} />
             <span className="input__error">{errors.senha?.message}</span>
         </label>
         <br />
