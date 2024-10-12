@@ -3,7 +3,7 @@ import Link from "next/link";
 const AcessoNegadoPage = () => {
     return (
         <>
-        <main className="main__denied">
+        <main className="main__alternative">
             <h1>Acesso Negado</h1>
             <p>Cadastre-se primeiro para poder agendar um serviço!</p>
             <div className="denied__div">

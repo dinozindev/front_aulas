@@ -171,7 +171,7 @@ main img {
     transition: 0.5s;
 }
 
-.main__denied {
+.main__alternative {
     width:100%;
     height: 90%;
     display: flex;
@@ -185,3 +185,21 @@ main img {
     gap: 2rem;
 }
 
+.main__details {
+    width: 100%;
+    height: 90%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card__user {
+    background-color:#F2E8E4;
+    padding: 3rem;
+    height: 70%;
+    border-radius: 16px;
+}
+
+.card__user h1 {
+    margin-bottom: 1.5rem;
+}

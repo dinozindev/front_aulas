@@ -24,6 +24,8 @@ const CadastroUsuarioPage = () => {
     const [racaPet, setRacaPet] = useState('');
     const [idadePet, setIdadePet] = useState('');
 
+    const router = useRouter();
+
     const [usuario, setUsuario] = useState();
 
     const {register, handleSubmit, formState : {errors}} = useForm({resolver: yupResolver(schema)})
@@ -32,6 +34,7 @@ const CadastroUsuarioPage = () => {
         setUsuario(usuario)
         localStorage.setItem("usuario", JSON.stringify(usuario))
         localStorage.setItem("logado", 'true')
+        router.push("/cadastro-concluido")
     }
 
     return (

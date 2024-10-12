@@ -6,6 +6,10 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const [logadoNoSite, setLogadoNoSite] = useState<any>();
 
+  const update = () => {
+    window.location.reload()
+  }
+
   useEffect(() => {
     const logado = localStorage.getItem('logado');
     setLogadoNoSite(logado);
@@ -28,10 +32,10 @@ const Header = () => {
             <li>
             <Link href="/detalhes-usuario">Detalhes do Usuário/Pet</Link>  
             </li>
-            {!logadoNoSite ? <li>
-            <Link href="/cadastro-usuario">Cadastrar-se</Link>
+            {logadoNoSite == "true" ? <li>
+            <Link href="/logout" onClick={update}>Logout</Link>
             </li> : <li>
-            <Link href="/logout">Logout</Link>
+            <Link href="/cadastro-usuario">Cadastrar-se</Link>
             </li>}
             
         </ul>

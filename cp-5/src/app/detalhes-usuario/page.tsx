@@ -14,7 +14,8 @@ const DetalhesUsuarioPage = () => {
     return (
         <>
         {usuario ? 
-            <div>
+        <main className="main__details">
+            <div className="card__user">
                 <h1>Detalhes do Usuário e Pet</h1>
                 <p>Nome: {usuario.nome}</p>
                 <p>Senha: {usuario.senha}</p>
@@ -24,6 +25,10 @@ const DetalhesUsuarioPage = () => {
                 <p>Idade do Pet: {usuario.idade_pet} ano(s)</p>
                 <p>Raça do Pet: {usuario.raca_pet}</p>
             </div>
+            <div className="card__user">
+                <h1>Serviço agendado</h1>
+            </div>
+        </main>
          :  <p>Carregando...</p>
         }
     </>
