@@ -10,13 +10,13 @@ const Header = () => {
   const router = useRouter()
 
   useEffect(() => {
-    const logado = localStorage.getItem('logado');
+    const logado = sessionStorage.getItem('logado');
     setLogadoNoSite(logado);
     console.log(logado)
   }, [])
 
   const logout = () => {
-    const logado = localStorage.setItem('logado', 'false');
+    const logado = sessionStorage.setItem('logado', 'false');
     localStorage.setItem('usuario', '');
     localStorage.removeItem('servicos')
     setLogadoNoSite(logado)
@@ -45,9 +45,16 @@ const Header = () => {
             </li>
             {logadoNoSite == "true" ? <li>
               <button onClick={logout} className="logout__button">Logout</button>
-            </li> : <li>
+            </li> :
+            <>
+            <li>
             <Link href="/cadastro-usuario">Cadastrar-se</Link>
-            </li>}  
+            </li>
+            <li>
+              <Link href="/login">Login</Link>
+            </li>
+            </> 
+            }  
         </ul>
     </header>
     </>

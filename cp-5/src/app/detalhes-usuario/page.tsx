@@ -15,7 +15,7 @@ const DetalhesUsuarioPage = () => {
     const router = useRouter();
 
     useEffect(() => {
-        const logado = localStorage.getItem('logado');
+        const logado = sessionStorage.getItem('logado');
         if (!logado || logado === 'false') {
             router.push('/acesso-negado'); 
         }
@@ -25,7 +25,6 @@ const DetalhesUsuarioPage = () => {
       const servicosCadastrados = localStorage.getItem('servicos');
       const servicosObtidos = servicosCadastrados ? JSON.parse(servicosCadastrados) : [];
       setServicos(servicosObtidos)
-      console.log(servicosObtidos)
     }, [])
 
     return (

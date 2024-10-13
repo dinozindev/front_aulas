@@ -26,9 +26,7 @@ const CadastroUsuarioPage = () => {
     const inserirUsuario = (usuario : any) => {
         setUsuario(usuario)
         localStorage.setItem("usuario", JSON.stringify(usuario))
-        localStorage.setItem("logado", 'true')
         router.push("/cadastro-concluido")
-
         setTimeout(() => {
             window.location.reload()
         }, 1000)

@@ -17,7 +17,7 @@ const CadastroServicoPage = () => {
     const router = useRouter();
 
     useEffect(() => {
-        const logado = localStorage.getItem('logado');
+        const logado = sessionStorage.getItem('logado');
         if (!logado || logado === 'false') {
             router.push('/acesso-negado'); 
         }
@@ -60,7 +60,7 @@ const CadastroServicoPage = () => {
             <span className="input__error">{errors.data?.message}</span>
         </label>
         <br />
-        <label>Data do Serviço
+        <label>Observações
             <input type="text" {...register('observacao')}/>
             <span className="input__error">{errors.observacao?.message}</span>
         </label>
