@@ -1,16 +1,13 @@
 'use client'
-import { useEffect } from "react";
+
+import LinkButton from "../../../components/LinkButton";
 
 const LogoutPage = () => {
-    useEffect(() => {
-        localStorage.setItem("logado", "false")
-        localStorage.setItem("usuario", "")
-    })
-
     return (
         <>
         <main className="main__alternative">
-            <h1>Desconectado</h1>
+            <h1 className="page__title">Desconectado</h1>
+            <LinkButton name="Home" link="/"/>
         </main>
         </>
     )

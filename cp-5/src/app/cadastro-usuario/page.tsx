@@ -12,17 +12,10 @@ const schema = yup.object().shape({
     tipo_pet: yup.string().required('O tipo do pet é obrigatório'),
     nome_pet: yup.string().required('O nome do pet é obrigatório'),
     raca_pet: yup.string().required('A raça/espécie do pet é obrigatória'),
-    idade_pet: yup.number().required('A idade do pet é obrigatória.')
+    idade_pet: yup.number().required('A idade do pet é obrigatória.').integer('A idade do pet deve ser um número inteiro.')
 })
 
 const CadastroUsuarioPage = () => {
-    const [nome, setNome] = useState('');
-    const [senha, setSenha] = useState('');
-    const [proprietarioTel, setProprietarioTel] = useState('');
-    const [tipoPet, setTipoPet] = useState('');
-    const [nomePet, setNomePet] = useState('');
-    const [racaPet, setRacaPet] = useState('');
-    const [idadePet, setIdadePet] = useState('');
 
     const router = useRouter();
 
@@ -35,6 +28,10 @@ const CadastroUsuarioPage = () => {
         localStorage.setItem("usuario", JSON.stringify(usuario))
         localStorage.setItem("logado", 'true')
         router.push("/cadastro-concluido")
+
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000)
     }
 
     return (
@@ -42,7 +39,7 @@ const CadastroUsuarioPage = () => {
         <h1 className="page__title">Cadastrar-se</h1>
         <form onSubmit={handleSubmit(inserirUsuario)}>
         <label>Nome do Usuário
-            <input type="text" {...register('nome') } onChange={(e) => setNome(e.target.value)}/>
+            <input type="text" {...register('nome') }/>
             <span className="input__error">{errors.nome?.message}</span>
         </label>
         <br />

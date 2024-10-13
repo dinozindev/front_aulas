@@ -7,7 +7,7 @@ import * as yup from 'yup';
 
 const schema = yup.object().shape({
     nome: yup.string().required('Nome do serviço é obrigatório'),
-    data: yup.date().min(new Date(), 'A data não pode ser anterior ao dia atual').required('A data do serviço é obrigatória'),
+    data: yup.date().min(new Date(), 'A data não pode ser anterior ao dia atual').required('A data do serviço é obrigatória').typeError('A data deve ter um valor válido'),
     observacao: yup.string().required('Observação é obrigatória.')
 })
 
@@ -21,17 +21,10 @@ const CadastroServicoPage = () => {
         if (!logado || logado === 'false') {
             router.push('/acesso-negado'); 
         }
-        const fetchServicos = async () => {
-            try {
-                const res = await fetch('/api/servicos.json'); 
-                const data = await res.json();
-                setListaServicos(data)
-                console.log(data)
-            } catch (error) {
-                console.log("Erro ao buscar os serviços: ", error);
-            }
-        }
-        fetchServicos();
+        const servicos = localStorage.getItem('servicos');
+        const servicosObtidos = servicos == null ? [] : JSON.parse(servicos);
+        console.log(servicosObtidos)
+        setListaServicos(servicosObtidos);
     }, []);
 
     const {register, handleSubmit, formState : {errors}} = useForm({resolver: yupResolver(schema)})
@@ -39,13 +32,14 @@ const CadastroServicoPage = () => {
     const inserirServico = (servico : any) => {
         const listaAtualizada = [...listaServicos, servico]
         setListaServicos(listaAtualizada)
-        console.log(listaServicos)
-
+        localStorage.setItem("servicos", JSON.stringify(listaAtualizada))
+        router.push('/cadastro-concluido')
     }
+
   return (
     <>
-    <h1 className="page__title">Cadastrar Serviço</h1>
-    <form onSubmit={handleSubmit(inserirServico)}>
+    <h1 className="page__title">Agendar um Serviço</h1>
+    <form onSubmit={handleSubmit(inserirServico)} className="form__cadastro--service">
         <label>Tipo do Serviço
             <select {...register('nome')}>
             <option value="" disabled selected>Selecione o tipo de Serviço...</option>
@@ -62,7 +56,7 @@ const CadastroServicoPage = () => {
         </label>
         <br/>
         <label>Data do Serviço
-            <input type="date" {...register('data')}/>
+            <input type="datetime-local" {...register('data')}/>
             <span className="input__error">{errors.data?.message}</span>
         </label>
         <br />
