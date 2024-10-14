@@ -2,7 +2,6 @@
 
 import cachorro from "../../public/img/cachorro-main.png"
 import Image from "next/image";
-import Link from "next/link";
 import LinkButton from "../../components/LinkButton";
 
 

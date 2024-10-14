@@ -44,14 +44,14 @@ const Header = () => {
             <Link href="/detalhes-usuario">Detalhes do Usuário/Pet</Link>  
             </li>
             {logadoNoSite == "true" ? <li>
-              <button onClick={logout} className="logout__button">Logout</button>
+              <button onClick={logout} className="header__button">Logout</button>
             </li> :
             <>
             <li>
-            <Link href="/cadastro-usuario">Cadastrar-se</Link>
+            <Link href="/cadastro-usuario" className="header__button">Cadastrar-se</Link>
             </li>
             <li>
-              <Link href="/login">Login</Link>
+              <Link href="/login" className="header__button">Login</Link>
             </li>
             </> 
             }  

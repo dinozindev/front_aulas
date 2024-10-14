@@ -26,6 +26,10 @@ header {
     justify-content: space-between;
 }
 
+a:visited {
+    color: black;
+}
+
 .logo__div {
     display:flex;
     align-items:center;
@@ -40,8 +44,8 @@ header {
     gap: 2rem;
 }
 
-.logout__button {
-    padding: 0.5rem;
+.header__button {
+    padding: 0.5rem 1rem;
     border: 0;
     background-color: #ec4917;
     color: white;
@@ -49,10 +53,14 @@ header {
     border-radius: 8px;
 }
 
-.logout__button:hover {
+.header__button:hover {
     cursor: pointer;
     background-color: #aa543a; 
     transition: 0.5s;
+}
+
+.header__button:visited {
+    color: white;
 }
 
 form {
@@ -182,18 +190,24 @@ main img {
 .home__link--div {
     display: flex;
     gap: 2rem;
+    margin-left: 0.5rem;
 }
 
-.home__link, .denied__div a {
+.home__link, .denied__div a, .submit__login {
     background-color: #ec4917;
     padding: 0.5rem 1.5rem; 
     color: white; 
     border-radius: 12px;
 }
 
-.home__link:hover, .denied__div a:hover {
+.home__link:hover, .denied__div a:hover, .submit__login:hover {
+    cursor: pointer;
     background-color: #aa543a; 
     transition: 0.5s;
+}
+
+.home__link:visited {
+    color: white;
 }
 
 .main__alternative {
@@ -248,4 +262,24 @@ main img {
 
 .card__user h1 {
     margin-bottom: 1.5rem;
+}
+
+.login__div {
+    width: 30%;
+    height: 60%;
+    margin: 0 auto;
+    background-color: #F2E8E4;
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.login__div input {
+    width: 100%; 
+    margin-bottom: 1rem;  
+}
+
+.submit__login {
+    border: 0;
+    margin: 0.5rem 0;
 }

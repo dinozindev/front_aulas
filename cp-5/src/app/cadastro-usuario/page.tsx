@@ -12,7 +12,7 @@ const schema = yup.object().shape({
     tipo_pet: yup.string().required('O tipo do pet é obrigatório'),
     nome_pet: yup.string().required('O nome do pet é obrigatório'),
     raca_pet: yup.string().required('A raça/espécie do pet é obrigatória'),
-    idade_pet: yup.number().required('A idade do pet é obrigatória.').integer('A idade do pet deve ser um número inteiro.')
+    idade_pet: yup.number().required('A idade do pet é obrigatória.').typeError('A idade do pet deve ser um número inteiro.')
 })
 
 const CadastroUsuarioPage = () => {
@@ -34,20 +34,20 @@ const CadastroUsuarioPage = () => {
 
     return (
         <>
-        <h1 className="page__title">Cadastrar-se</h1>
+        <h1 className="page__title">Cadastro</h1>
         <form onSubmit={handleSubmit(inserirUsuario)}>
         <label>Nome do Usuário
-            <input type="text" {...register('nome') }/>
+            <input placeholder="Digite um nome de usuário..." type="text" {...register('nome') }/>
             <span className="input__error">{errors.nome?.message}</span>
         </label>
         <br />
         <label>Senha
-            <input type="password" {...register('senha')} />
+            <input placeholder="Digite uma senha..." type="password" {...register('senha')} />
             <span className="input__error">{errors.senha?.message}</span>
         </label>
         <br />
         <label>Telefone
-            <input type="text" {...register('proprietario_tel')} />
+            <input placeholder="Digite seu telefone..." type="text" {...register('proprietario_tel')} />
             <span className="input__error">{errors.proprietario_tel?.message}</span>
         </label>
         <br />
@@ -64,17 +64,17 @@ const CadastroUsuarioPage = () => {
         </label>
         <br />
         <label>Nome do Pet
-            <input type="text" {...register('nome_pet')} />
+            <input placeholder="Digite o nome do seu pet..." type="text" {...register('nome_pet')} />
             <span className="input__error">{errors.nome_pet?.message}</span>
         </label>
         <br />
         <label>Raça/Espécie do Pet
-            <input type="text" {...register('raca_pet')} />
+            <input placeholder="Digite a raça/espécie do seu pet..." type="text" {...register('raca_pet')} />
             <span className="input__error">{errors.raca_pet?.message}</span>
         </label>
         <br />
         <label>Idade do Pet
-            <input type="text" {...register('idade_pet')} />
+            <input placeholder="Digite a idade do pet..." type="text" {...register('idade_pet')} />
             <span className="input__error">{errors.idade_pet?.message}</span>
         </label>
         <br />

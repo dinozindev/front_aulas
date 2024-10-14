@@ -37,16 +37,21 @@ const PageLogin = () => {
 
     return (
         <>
-            <label>Usuário:
-                <input type="text" value={usuario} onChange={(e) => setUsuario(e.target.value)}/>
+        <main className="main__page">
+        <div className="login__div">
+        <h1 className="page__title">Login</h1>
+            <label>Usuário
+                <input placeholder="Digite seu nome de usuário..." type="text" value={usuario} onChange={(e) => setUsuario(e.target.value)}/>
             </label>
             <br />
-            <label>Senha:
-                <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)}/>
+            <label>Senha
+                <input placeholder="Digite sua senha..." type="password" value={senha} onChange={(e) => setSenha(e.target.value)}/>
             </label>
             <br />
-            <button onClick={handleLogin}>Login</button>
-        {error && <p>{error}</p>}
+            <button onClick={handleLogin} className="submit__login">Login</button>
+        {error && <p className="input__error">{error}</p>}
+        </div>
+        </main>
         </>
     )
 }
