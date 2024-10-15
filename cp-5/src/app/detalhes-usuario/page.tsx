@@ -32,7 +32,7 @@ const DetalhesUsuarioPage = () => {
         {usuario ? 
         <main className="main__details">
             <div className="card__user">
-                <h1>Detalhes do Usuário e Pet</h1>
+                <h1>Detalhes do Usuário/Pet</h1>
                 <p><b>Nome:</b> {usuario.nome}</p>
                 <p><b>Senha:</b> {usuario.senha}</p>
                 <p><b>Telefone do Proprietário:</b> {usuario.proprietario_tel}</p>
