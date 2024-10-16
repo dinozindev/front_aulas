@@ -12,7 +12,6 @@ const Header = () => {
   useEffect(() => {
     const logado = sessionStorage.getItem('logado');
     setLogadoNoSite(logado);
-    console.log(logado)
   }, [])
 
   const logout = () => {

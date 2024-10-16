@@ -12,7 +12,6 @@ const ServicosPage = () => {
                 const res = await fetch('/api/servicos.json'); 
                 const data = await res.json();
                 setListaServicos(data)
-                console.log(data)
             } catch (error) {
                 console.log("Erro ao buscar os serviços: ", error);
             }

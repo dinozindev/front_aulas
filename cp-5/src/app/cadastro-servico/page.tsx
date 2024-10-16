@@ -23,7 +23,6 @@ const CadastroServicoPage = () => {
         }
         const servicos = localStorage.getItem('servicos');
         const servicosObtidos = servicos == null ? [] : JSON.parse(servicos);
-        console.log(servicosObtidos)
         setListaServicos(servicosObtidos);
     }, []);
 
@@ -41,8 +40,8 @@ const CadastroServicoPage = () => {
     <h1 className="page__title">Agendar um Serviço</h1>
     <form onSubmit={handleSubmit(inserirServico)} className="form__cadastro--service">
         <label>Tipo do Serviço
-            <select {...register('nome')}>
-            <option value="" disabled selected>Selecione o tipo de Serviço...</option>
+            <select {...register('nome')} defaultValue={'DEFAULT'}>
+            <option value="DEFAULT" disabled>Selecione o tipo de Serviço...</option>
             <option value="Banho">Banho</option>
             <option value="Tosa Completa">Tosa Completa</option>
             <option value="Tosa Higiênica">Tosa Higiênica</option>

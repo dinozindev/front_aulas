@@ -52,8 +52,8 @@ const CadastroUsuarioPage = () => {
         </label>
         <br />
         <label>Tipo do Pet
-            <select {...register('tipo_pet')}>
-            <option value="" disabled selected>Selecione o tipo de Pet...</option>
+            <select {...register('tipo_pet')} defaultValue={'DEFAULT'}>
+            <option value="DEFAULT" disabled>Selecione o tipo de Pet...</option>
             <option value="Cachorro">Cachorro</option>
             <option value="Gato">Gato</option>
             <option value="Pássaro">Pássaro</option>

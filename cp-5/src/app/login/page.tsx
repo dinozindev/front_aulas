@@ -16,7 +16,7 @@ const PageLogin = () => {
     const handleLogin = () => {
         if(usuario === usuarioCadastrado && senha === senhaCadastrada) {
             sessionStorage.setItem('logado', 'true');
-            router.push('/');
+            router.push('/login-concluido');
 
             setTimeout(() => {
                 window.location.reload()
