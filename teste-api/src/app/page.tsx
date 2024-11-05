@@ -44,10 +44,14 @@ const DivLista = styled.div`
       background:none;
       border:none;
     }
+    tfoot {
+      width: 100%;
+    }
     tfoot tr td{
-      text-algin:center;
+      text-align:center;
       background:#333;
       color: white;
+      width: 100%;
     }
 `
 
@@ -93,6 +97,7 @@ const ListaVeiculos: React.FC = () => {
               <th>Modelo</th>
               <th>Ano</th>
               <th>Quilometragem</th>
+              <th>CPF Proprietário</th>
             </tr>
           </thead>
           <tbody>
@@ -104,6 +109,7 @@ const ListaVeiculos: React.FC = () => {
                   <td>{veiculo.modelo}</td>
                   <td>{veiculo.ano}</td>
                   <td>{veiculo.quilometragem}</td>
+                  <td>{veiculo.usuario.cpfUsuario}</td>
                   <td>
                     <Link href="/veiculo/[placa]" as={`/veiculo/${veiculo.placa}`}>
                       <button><E /></button>
